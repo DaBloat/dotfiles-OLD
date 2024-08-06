@@ -1,3 +1,4 @@
+# UserConf
 All the configurations for the hyprland.conf is splitted in many parts in this Directory to ease the process of expansion!
 
 Take Note:
