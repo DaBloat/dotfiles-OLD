@@ -8,3 +8,4 @@ Archlinux Dotfiles of mine using Hyprland...
 - added volume.sh script for volume notifications
 - Added Functionality for the following XF86 keys (AudioRaise, AudioLower, AudioMute)
 - Changed some Icon configurations (dunst)
+- Added Volume related Icons
