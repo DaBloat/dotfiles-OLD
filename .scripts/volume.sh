@@ -18,7 +18,7 @@ STATUS=$(wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{print $NF;}')
 notification(){
 	case $STATUS in
 		"[MUTED]")
-			dunstify "Volume is in muted" -r 1111 -i "volume-mute" -t 2000
+			dunstify "Volume is in mute" -r 1111 -i "volume-mute" -t 2000
 			;;
 		*)
 			VOLUME=$(wpctl get-volume @DEFAULT_AUDIO_SINK@ | tr -dc '0-9' | sed 's/^0\{1,2\}//')
