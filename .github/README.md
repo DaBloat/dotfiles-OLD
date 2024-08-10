@@ -5,6 +5,9 @@ Archlinux Dotfiles of mine using Hyprland...
 
 ## 🗓️ August 11, 2024 🗓️
 - Added screenshot.sh for screenshot functions & notifs
+- Changes dunst icon's min-max size [ 0-32 --> 32-60]
+- Changes dunst height size [ 250 --> 300]
+- Enabled  dunst option for dpi [per_monitor_dpi = false --> true]
 
 ## 🗓️ August 9, 2024 🗓️
 - Added Functionality for the following XF86 keys (MonBrightnessUp, MonBrightnessDown)
