@@ -1,0 +1,84 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  "logo":{
+  	"source":"~/.config/fastfetch/bocchi.png",
+	"height":10
+  	 },
+  "display":
+  	{
+		"separator":"  ",
+		"color":"white"
+  	},
+  "modules": [
+	  {
+		  "type":"title",
+		  "key":"  ",
+		  "keyColor":"red"
+	  },
+	  {
+		"type":"custom",
+		"format":"────────────────────────────────────────────────┐"
+	  },
+	  {
+		"type":"os",
+		"key":" 󰣇 OS",
+		"keyColor":"red"
+	  },
+	  {
+		"type":"host",
+		"format":"{1}",
+		"key":" 󰌢 Host",
+		"keyColor":"red"
+	  },
+	  {
+		"type":"kernel",
+		"format":"{2}",
+		"key":"  Kernel",
+		"keyColor":"red"
+	  },
+	  {
+		  "type":"shell",
+		  "key":"  Shell",
+		  "keyColor": "red"
+	  },
+	  {
+		"type":"display",
+		"format":"{6}({1}x{2} @ {3} Hz)",
+		"key":" 󱄄 Display",
+		"keyColor":"red"
+	  },
+	  {
+		  "type":"cpu",
+		  "format":"{1}",
+		  "key":"  CPU",
+		  "keyColor":"red"
+	  },
+	  {
+		  "type":"gpu",
+		  "format":"{1} {2}",
+		  "key":"  GPU",
+		  "keyColor":"red"
+	  },
+	  {
+		  "type":"disk",
+		  "key":"  Disk ({})",
+		  "format":"{2}({3})",
+		  "keyColor":"red"
+	  },
+	  {
+		  "type":"packages",
+		  "key":"  Packages",
+		  "keyColor":"red"
+	  },
+	  {
+                  "type":"custom",
+		  "format":"───────────────────────────────────────────────┘"
+
+	  },
+          {
+		"type":"colors",
+	        "symbol": "circle",
+      		"paddingLeft": 16
+    	  }
+  ]
+}
