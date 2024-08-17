@@ -28,21 +28,31 @@ window {
 }
 
 #workspaces button.active {
-    padding: 0 2px;
+    padding: 0 1px;
     background: transparent;
     color: #3E87EA;
 }
 
-#battery, #pulseaudio, #clock, #backlight{
-	 margin: 0px 5px 0px 5px;
+#battery, #pulseaudio, #backlight{
+	 margin: 0px 10px 0px 10px;
 
 }
+
+#clock {
+   margin: 0px 10px 0px 10px;
+   padding: 1px 5px 1px 5px;
+   background: #1D1924;
+   border: 3px solid #3E87EA;
+   border-radius: 25px;
+   }
+
+
 #basic {
-   margin: 0px 0px 0px 0px;
-   min-width:  10px;
-      background: #1D1924;
-    border: 3px solid #3E87EA;
-    border-radius: 25px;
+   color: #3E87EA;
+   padding: 1px 5px 1px 5px;
+   background: #1D1924;
+   border: 3px solid #3E87EA;
+   border-radius: 25px;
 }
 
 #tray{

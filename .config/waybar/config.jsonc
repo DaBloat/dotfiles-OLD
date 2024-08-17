@@ -7,7 +7,7 @@
     // Choose the order of the modules
     "modules-left": ["custom/arch"],
     "modules-center": ["hyprland/workspaces"],
-    "modules-right": ["tray","group/basic"],
+    "modules-right": ["tray","group/basic","clock"],
 
     // Modules configuration
 
@@ -39,9 +39,9 @@
 
 
     "clock": {
-        "format": "{:%I:%M %p}",
+        "format": "  {:%I:%M %p}",
         "rotate": 0,
-        "format-alt": "{:%R󰃭 %d·%m·%y}",
+        "format-alt": "{:%R 󰃭   %d·%m·%y}",
         "tooltip-format": "<tt>{calendar}</tt>",
         "calendar": {
             "mode": "month",
@@ -56,13 +56,11 @@
 
 
    "backlight": {
-        "rotate": 0,
-        "format": "{icon}",
+	"format": "{icon}",
+	"tooltip-format":"{icon} {percent}%",
         "format-icons": ["", "", "", "", "", "", "", "", ""],
         "on-scroll-up": ".scripts/brightness.sh u",
-        "on-scroll-down": ".scripts/brightness.sh d",
-	"on-click":"btop",
-        "min-length": 6
+        "on-scroll-down": ".scripts/brightness.sh d"
     },
 
 
@@ -70,13 +68,16 @@
         "states": {
             "good": 95,
             "warning": 30,
-            "critical": 15
+            "critical": 20
         },
-        "format": "{icon}",
-        "format-icons": ["󰁺", "󰁼", "󰁾", "󰂂", "󰁹"]
+	"format":"{icon}",
+	"tooltip-format":"{capacity}%",
+        "rotate": 0,
+        "format-charging": "󰂄",
+        "format-plugged": "󰂄",
+        "format-alt": "{time} {icon}",
+        "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
     },
-
-
 
     "pulseaudio": {
         "format": "{icon}",
@@ -90,16 +91,15 @@
         "format-icons": {
             "headphone": "",
             "headset": "",
-            "default": ["", "", ""]
+            "default": ["", " ", " "]
         }
     },
     "group/basic":{
-	"orientation":"inherit",
+	"orientation":"horizontal",
 	"modules":[
-	"pulseaudio", 
-	"backlight", 
-	"battery",
-	"clock"
+	"pulseaudio",
+	"backlight",
+	"battery"
 	]
     }
 }
