@@ -33,7 +33,7 @@ window {
     color: #3E87EA;
 }
 
-#battery, #pulseaudio, #backlight{
+#battery, #pulseaudio, #backlight, #bluetooth{
 	 margin: 0px 10px 0px 10px;
 
 }
