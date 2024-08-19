@@ -51,9 +51,9 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 # Aliases
 alias pip="~/PythonProjects/bin/pip"
 alias python="~/PythonProjects/bin/python"
-alias ls="ls -a --color"
+alias ls="ls --color"
 alias sysupgrade="sudo pacman -Syu"
-#alias yna="echo 'I LOVE YOU'"
+
 
 # Keybindings
 
