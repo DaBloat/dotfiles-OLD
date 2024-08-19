@@ -1,7 +1,7 @@
 {
     "layer": "top", // Waybar at top layer
     "position": "top", // Waybar position (top|bottom|left|right)
-    "height": 20, // Waybar height
+    "height": 40, // Waybar height
     "output": "eDP-1",
     // "width": 200, // Waybar width
     // Choose the order of the modules
@@ -14,7 +14,7 @@
     "custom/arch":{
 		  "format":"{icon}",
 		  "format-icons":" 󰣇 ",
-		  "on-click":""
+		  "on-click":"kitty"
 
     		  },
 
@@ -33,13 +33,13 @@
 
 
     "tray": {
-        "icon-size": 21,
+        "icon-size": 15,
         "spacing": 10
     },
 
 
     "clock": {
-        "format": "  {:%I:%M %p}",
+        "format": "   {:%I:%M %p}",
         "rotate": 0,
         "format-alt": "{:%R 󰃭   %d·%m·%y}",
         "tooltip-format": "<tt>{calendar}</tt>",
@@ -94,7 +94,6 @@
             "default": ["", " ", " "]
         }
     },
-
     "group/basic":{
 	"orientation":"horizontal",
 	"modules":[

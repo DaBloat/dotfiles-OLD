@@ -15,22 +15,22 @@ window {
 
 
 #workspaces {
-    margin: 5 1px;
-    background: #1D1924;
-    border: 3px solid #3E87EA;
+    margin: 5 0px;
+    background: #2e3440;
+    border: 3px solid #566F90;
     border-radius: 25px;
 }
 
 #workspaces button {
     padding: 0 1px;
     background: transparent;
-    color: #ffffff;
+    color: #B4CBD9;
 }
 
 #workspaces button.active {
-    padding: 0 1px;
+    padding: 0 0px;
     background: transparent;
-    color: #3E87EA;
+    color: #566F90;
 }
 
 #battery, #pulseaudio, #backlight{
@@ -39,20 +39,22 @@ window {
 }
 
 #clock {
-   color: #3E87EA;
-   margin: 1px 10px 1px 10px;
+   
+   color: #566F90;
+   margin: 5 5px; 
    padding: 1px 5px 1px 5px;
-   background: #1D1924;
-   border: 3px solid #3E87EA;
+   background: #2e3440;
+   border: 3px solid #566F90;
    border-radius: 25px;
    }
 
 
 #basic {
-   color: #3E87EA;
+   margin: 5 5px;
+   color: #566F90;
    padding: 1px 5px 1px 5px;
-   background: #1D1924;
-   border: 3px solid #3E87EA;
+   background: #2e3440;
+   border: 3px solid #566F90;
    border-radius: 25px;
 }
 
