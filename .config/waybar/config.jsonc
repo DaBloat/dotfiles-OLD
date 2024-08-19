@@ -1,13 +1,13 @@
 {
     "layer": "top", // Waybar at top layer
-    "position": "bottom", // Waybar position (top|bottom|left|right)
+    "position": "top", // Waybar position (top|bottom|left|right)
     "height": 20, // Waybar height
     "output": "eDP-1",
     // "width": 200, // Waybar width
     // Choose the order of the modules
     "modules-left": ["custom/arch"],
     "modules-center": ["hyprland/workspaces"],
-    "modules-right": ["tray","group/basic","clock"],
+    "modules-right": ["group/basic","clock"],
 
     // Modules configuration
 
@@ -98,6 +98,7 @@
     "group/basic":{
 	"orientation":"horizontal",
 	"modules":[
+	"tray",
 	"pulseaudio",
 	"backlight",
 	"battery"
