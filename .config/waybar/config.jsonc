@@ -5,19 +5,26 @@
     "output": "eDP-1",
     // "width": 200, // Waybar width
     // Choose the order of the modules
-    "modules-left": ["custom/arch"],
+    "modules-left": ["group/utils"],
     "modules-center": ["hyprland/workspaces"],
-    "modules-right": ["group/basic","clock"],
+    "modules-right": ["group/systemtray","clock"],
 
     // Modules configuration
 
     "custom/arch":{
 		  "format":"{icon}",
-		  "format-icons":" 󰣇 ",
+		  "format-icons":"󰣇",
 		  "on-click":"kitty"
-
     		  },
-
+    "custom/user":{
+		  "format":"{icon}",
+		  "format-icons": "",
+		  "on-click":"kitty"
+    },
+    //"custom/allworkspaces":{
+    //	"format":"{icon}",
+//	"format-icons":"󱦞"
+  //  },
     "hyprland/workspaces": {
   	"format": "{icon}",
   	"on-click": "activate",
@@ -94,7 +101,7 @@
             "default": ["", " ", " "]
         }
     },
-    "group/basic":{
+    "group/systemtray":{
 	"orientation":"horizontal",
 	"modules":[
 	"tray",
@@ -102,5 +109,12 @@
 	"backlight",
 	"battery"
 	]
+    },
+    "group/utils":{
+    "orientation":"horizontal",
+    "modules":[
+	"custom/arch",
+	"custom/user"
+    ]
     }
 }
