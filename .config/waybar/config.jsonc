@@ -88,7 +88,7 @@
 
     "pulseaudio": {
         "format": "{icon}",
-	"format-muted":"  ",
+	"format-muted":"",
         "on-click": "pavucontrol",
         "on-click-middle": ".scripts/volume.sh m",
         "on-scroll-up": ".scripts/volume.sh u",
@@ -104,10 +104,10 @@
     "group/systemtray":{
 	"orientation":"horizontal",
 	"modules":[
-	"tray",
 	"pulseaudio",
 	"backlight",
-	"battery"
+	"battery",
+	"tray"
 	]
     },
     "group/utils":{
