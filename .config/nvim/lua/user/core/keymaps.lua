@@ -17,10 +17,17 @@ keymap.set("n","<leader>sh","<C-w>s", { desc = "Split Screen-Horizontal"})
 keymap.set("n","<leader>se","<C-w>=", { desc = "Split Screen Equally"})
 keymap.set("n","<leader>sx","<cmd>close<CR>", { desc = "Close Current Split"})
 
+-- New Tabs	
 keymap.set("n", "<leader>to", "<cmd>tabnew<CR>" , { desc = "Open New Tab"})
 keymap.set("n", "<leader>tx", "<cmd>tabclose<CR>" , { desc = "Close current Tab"})
 keymap.set("n", "<leader>tn", "<cmd>tabn<CR>" , { desc = "Go to Next Tab"})
 keymap.set("n", "<leader>tp", "<cmd>tabp<CR>" , { desc = "Go to Previous Tab"})
 keymap.set("n", "<leader>tn", "<cmd>tabn<CR>" , { desc = "Go to Next Tab"})
 keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>" , { desc = "Open current Buffer on New Tab"})
+
+-- Seamless Movement
+keymap.set("n", "<leader>a", "<C-w>h", { desc = "Move to Left" })
+keymap.set("n", "<leader>d", "<C-w>l", { desc = "Move to Right" })
+keymap.set("n", "<leader>w", "<C-w>k", { desc = "Move to Up" })
+keymap.set("n", "<leader>s", "<C-w>j", { desc = "Move to Down" })
 
