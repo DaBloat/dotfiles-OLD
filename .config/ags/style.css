@@ -1,0 +1,63 @@
+window.bar {
+    background-color: transparent;
+    color: #AEC7DE;
+    }
+
+
+label {
+   font-weight: bold;
+   padding: 5px 10px;
+}
+
+
+box.right {
+    background-color: rgba(17, 16, 34, 1);
+    border-width: 2px;
+    border-radius: 0px 0px 0px 50px;
+}
+
+
+box.left {
+    background-color: rgba(17, 16, 34, 1);
+    border-width: 2px;
+    border-radius: 0px 0px 50px 0px;
+}
+
+
+box.center {
+    background-color: rgba(17, 16, 34, 1);
+    border-width: 2px;
+    border-radius: 0px 0px 50px 50px;
+}
+
+button {
+    min-width: 0;
+    margin-top: 1px;
+    margin-bottom: 3px;
+    margin-left: 1px;
+    margin-right: 1px;
+    font-size: 15px;
+    background-color: transparent;
+	border-color: transparent;
+}
+
+button.search_button {
+    margin-left: 20px;
+}
+
+button.music_button {
+   margin-right: 20px;
+}
+
+.client-title {
+    color: @theme_selected_bg_color;
+}
+
+.notification {
+    color: yellow;
+}
+
+levelbar block,
+highlight {
+    min-height: 10px;
+}
