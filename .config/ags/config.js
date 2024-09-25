@@ -1,10 +1,27 @@
 const date = Variable("", {poll: [1000, 'date +"%I:%M %p"'],})
 const battery = await Service.import('battery')
+const network = await Service.import('network')
+const bluetooth = await Service.import('bluetooth')
+
+
+function Network() {
+	const wifi = Widget.Icon({icon: network.wifi.bind('icon_name')})
+	const wired = Widget.Icon({icon: network.wired.bind('icon_name')})
+
+	return Widget.Button ({child: Widget.Stack({children: {wifi: wifi, wired: wired}})}) 
+}
+
+function Bluetooth() {
+	return Widget.Button({
+		child: Widget.Icon({icon: bluetooth.bind('enabled').as(on => `bluetooth-${on ? 'active' : 'disabled'}-symbolic`) 
+	})
+	})
+}
 
 function Search() {
 	return Widget.Button(
 		{
-			child: Widget.Label({label: "\uf002"}),
+			child: Widget.Label({label: "\uf002", class_name: 'search'}),
 			class_name: 'search_button'
 		}
 	)
@@ -91,6 +108,8 @@ function Right() {
 			Volume(),
 			Backlight(),
 			Battery(),
+			Bluetooth(),
+			Network(),
 			SystemMenu()
 		]
 	})
