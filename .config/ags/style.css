@@ -6,9 +6,8 @@ window.bar {
 
 label {
    font-weight: bold;
-   padding: 5px 10px;
+   font-size: 15px;
 }
-
 
 box.right {
     background-color: rgba(17, 16, 34, 1);
@@ -34,18 +33,17 @@ button {
     min-width: 0;
     margin-top: 1px;
     margin-bottom: 3px;
-    margin-left: 1px;
-    margin-right: 1px;
-    font-size: 15px;
     background-color: transparent;
-	border-color: transparent;
+    border-color: transparent;
 }
 
 button.search_button {
+    margin-right: 5px;
     margin-left: 20px;
 }
 
 button.music_button {
+   margin-left: 5px;
    margin-right: 20px;
 }
 
