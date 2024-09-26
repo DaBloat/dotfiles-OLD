@@ -2,7 +2,8 @@ const date = Variable("", {poll: [1000, 'date +"%I:%M %p"'],})
 const battery = await Service.import('battery')
 const network = await Service.import('network')
 const bluetooth = await Service.import('bluetooth')
-
+const volume = await Service.import('audio')
+const hyprland = await Service.import('hyprland')
 
 function Network() {
 	const wifi = Widget.Icon({icon: network.wifi.bind('icon_name')})
@@ -36,9 +37,19 @@ function Music() {
 	)
 }
 
+function dispatch(i) {
+	return hyprland.messageAsync(`dispatch workspace ${i}`)
+}
+
 function Workspaces() {
-	return Widget.Label(
-		{label: "Workspaces"}
+	return Widget.EventBox(
+		{child: Widget.Box(
+			{
+				children: Array.from({length: 5},(_, i) => i + 1).map(i => Widget.Button({
+					label: "\uf4aa",
+					onClicked: () => dispatch(i)
+				}))
+			})}
 	)
 }
 
@@ -65,21 +76,31 @@ function SystemTray() {
 }
 
 function Volume() {
-	return Widget.Label(
-		{label: "Volume"}
-	)
+		return  Widget.Button({
+		on_clicked: () => volume.speaker.is_muted = !volume.speaker.is_muted,
+    		child: Widget.Icon().hook(volume.speaker, self => {
+        		const vol = volume.speaker.volume * 100;
+        		const icon = [
+            			     [101, 'overamplified'],
+            			     [67, 'high'],
+            			     [34, 'medium'],
+            			     [1, 'low'],
+            			     [0, 'muted'],
+        			     ].find(([threshold]) => threshold <= vol)?.[1];
+        	self.icon = `audio-volume-${icon}-symbolic`;
+		})})
 }
 
+
 function Backlight() {
-	return Widget.Label(
-		{label: "Backlight"}
+	return Widget.Button(
+		{child: Widget.Label({label: "\udb83\udf62"})}
 	)
 }
 
 function Battery() {
-	return Widget.Label(
-		{label:"Battery"}
-	)
+	return Widget.Button(
+		{child: Widget.Icon({icon: battery.bind('icon_name')})})
 }
 
 function SystemMenu() {
