@@ -4,6 +4,7 @@ const network = await Service.import('network')
 const bluetooth = await Service.import('bluetooth')
 const volume = await Service.import('audio')
 const hyprland = await Service.import('hyprland')
+const systemtray = await Service.import('systemtray')
 
 function Network() {
 	const wifi = Widget.Icon({icon: network.wifi.bind('icon_name')})
@@ -69,9 +70,18 @@ function Arch() {
 	)
 }
 
+function SystemTrayItem(item) {
+	return Widget.Button(
+		{child: Widget.Icon().bind('icon',item, 'icon'),
+		tooltipmarkup: item.bind('tooltip_markup'),
+		onPrimaryClick: (_, event) => item.activate(event),
+    		onSecondaryClick: (_, event) => item.openMenu(event)}
+	)
+}
+
 function SystemTray() {
-	return Widget.Label(
-		{label: "SystemTray"}
+	return Widget.Box(
+		{children: systemtray.bind('items').as(i => i.map(SystemTrayItem))}
 	)
 }
 
