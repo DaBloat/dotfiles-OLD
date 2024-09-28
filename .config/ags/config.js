@@ -38,20 +38,25 @@ function Music() {
 	)
 }
 
+function wp_button(ws_id) {
+
+}
+
 function dispatch(i) {
-	return hyprland.messageAsync(`dispatch workspace ${i}`)
+	hyprland.messageAsync(`dispatch workspace ${i}`)
+}
+
+function WorkspaceLabel(i) {
+	return Widget.Button({
+		label:`${i}`,
+		onClicked: () => dispatch(i)
+	})
 }
 
 function Workspaces() {
-	return Widget.EventBox(
-		{child: Widget.Box(
-			{
-				children: Array.from({length: 5},(_, i) => i + 1).map(i => Widget.Button({
-					label: "\uf4aa",
-					onClicked: () => dispatch(i)
-				}))
-			})}
-	)
+	return Widget.Box(
+		{children: Array.from({ length: 5 }, (_, i) => i + 1).map(i => WorkspaceLabel(i))}
+		)    	
 }
 
 function User(){ 
