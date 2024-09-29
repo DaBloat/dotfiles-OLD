@@ -1,6 +1,6 @@
 window.bar {
     background-color: transparent;
-    color: #AEC7DE;
+    color: #A0B5B7;
     }
 
 
@@ -10,52 +10,125 @@ label {
 }
 
 box.right {
-    background-color: rgba(17, 16, 34, 1);
+    background-color: #1B3434;
     border-width: 2px;
     border-radius: 0px 0px 0px 50px;
 }
 
 
 box.left {
-    background-color: rgba(17, 16, 34, 1);
+    background-color: #1B3434;
     border-width: 2px;
     border-radius: 0px 0px 50px 0px;
 }
 
 
 box.center {
-    background-color: rgba(17, 16, 34, 1);
+    background-color: #1B3434;
     border-width: 2px;
     border-radius: 0px 0px 50px 50px;
 }
 
+.workspaces {
+ padding-left: 5px;
+ padding-right: 5px;
+ border-radius: 50px;
+ margin-top: 5px;
+ margin-bottom: 5px;
+ background-color: #224242;
+}
+
+.workspaces label.ws_id {
+ font-size: 10px
+}
+
+.workspaces button {
+ min-height: 1px;
+ min-width: 15px;
+ background-color: #A0B5B7;
+ border-radius: 15px;
+}
+
+.workspaces button.focused { 
+ padding-right: 10px;
+ padding-left: 10px;
+ background-color: #275565;
+}
+
+
 button {
-    min-width: 0;
-    margin-top: 1px;
-    margin-bottom: 3px;
+    padding: 2px;
+    margin-top: 5px;
+    margin-bottom: 5px;
     background-color: transparent;
     border-color: transparent;
 }
 
-button.search_button {
+.SystemMenu {
+   margin-right: 10px;
+}
+
+.SystemMenu:hover {
+   background-color: #275565;
+}
+
+.battery:hover {
+   background-color: #275565;
+}
+
+.wifi:hover {
+   background-color: #275565;
+}
+
+.bluetooth:hover {
+   background-color: #275565;
+}
+
+.volume {
+   margin-left: 20px;
+}
+
+.volume:hover {
+   background-color: #275565;
+}
+
+.backlight:hover {
+   background-color: #275565;
+}
+
+.search_button {
     margin-right: 5px;
     margin-left: 20px;
 }
 
-button.music_button {
+.music_button {
    margin-left: 5px;
    margin-right: 20px;
 }
 
-.client-title {
-    color: @theme_selected_bg_color;
+.arch_apps {
+   margin-left: 10px;
 }
 
-.notification {
-    color: yellow;
+.arch_apps:hover {
+   background-color: #275565;
 }
 
-levelbar block,
-highlight {
-    min-height: 10px;
+.user:hover {
+   background-color: #275565;
+}
+
+.SystemTray {
+  min-width: 30px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-radius: 50px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  background-color: #224242;
+  margin-right: 30px;
+}
+
+.system_tray_buttons:hover {
+ background-color: #275565;
 }

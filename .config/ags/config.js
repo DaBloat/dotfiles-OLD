@@ -10,11 +10,15 @@ function Network() {
 	const wifi = Widget.Icon({icon: network.wifi.bind('icon_name')})
 	const wired = Widget.Icon({icon: network.wired.bind('icon_name')})
 
-	return Widget.Button ({child: Widget.Stack({children: {wifi: wifi, wired: wired}})}) 
+	return Widget.Button ({
+		class_name: 'wifi', 
+		child: Widget.Stack({children: {wifi: wifi, wired: wired}}),
+		onHover: () => console.log(1)}) 
 }
 
 function Bluetooth() {
 	return Widget.Button({
+		class_name: "bluetooth",
 		child: Widget.Icon({icon: bluetooth.bind('enabled').as(on => `bluetooth-${on ? 'active' : 'disabled'}-symbolic`) 
 	})
 	})
@@ -38,30 +42,26 @@ function Music() {
 	)
 }
 
-function wp_button(ws_id) {
-
-}
-
-function dispatch(i) {
-	hyprland.messageAsync(`dispatch workspace ${i}`)
-}
-
-function WorkspaceLabel(i) {
-	return Widget.Button({
-		label:`${i}`,
-		onClicked: () => dispatch(i)
-	})
-}
-
 function Workspaces() {
+	const dispatch = id => {
+		hyprland.messageAsync(`dispatch workspace ${id}`)
+	}
+	const active = hyprland.active.workspace.bind("id")
 	return Widget.Box(
-		{children: Array.from({ length: 5 }, (_, i) => i + 1).map(i => WorkspaceLabel(i))}
-		)    	
+			{	class_name: 'workspaces',
+				spacing: 3,
+				children: Array.from({ length: 5 }, (_, i) => i + 1 ).map(i => Widget.Button({
+				class_name: active.as(id => `${id === i ? "focused": ""}`),
+				child: Widget.Label({label: `${i}`, class_name: "ws_id"}),	
+				onClicked: () => dispatch(i)
+			}))
+		})
 }
 
-function User(){ 
+function User() {
 	return Widget.Button(
 		{
+		class_name: 'user',
 		child: Widget.Label({label: "\uf007"}),
 		}
 	)
@@ -70,6 +70,7 @@ function User(){
 function Arch() {
 	return Widget.Button(
 		{
+		class_name: 'arch_apps',
 		child: Widget.Label({label: "\uf303"}),
 		}
 	)
@@ -77,7 +78,9 @@ function Arch() {
 
 function SystemTrayItem(item) {
 	return Widget.Button(
-		{child: Widget.Icon().bind('icon',item, 'icon'),
+		{
+		class_name: "system_tray_buttons",
+		child: Widget.Icon().bind('icon',item, 'icon'),
 		tooltipmarkup: item.bind('tooltip_markup'),
 		onPrimaryClick: (_, event) => item.activate(event),
     		onSecondaryClick: (_, event) => item.openMenu(event)}
@@ -86,12 +89,15 @@ function SystemTrayItem(item) {
 
 function SystemTray() {
 	return Widget.Box(
-		{children: systemtray.bind('items').as(i => i.map(SystemTrayItem))}
+		{ 
+		  class_name: "SystemTray",
+		  children: systemtray.bind('items').as(i => i.map(SystemTrayItem))}
 	)
 }
 
 function Volume() {
 		return  Widget.Button({
+		class_name: 'volume',
 		on_clicked: () => volume.speaker.is_muted = !volume.speaker.is_muted,
     		child: Widget.Icon().hook(volume.speaker, self => {
         		const vol = volume.speaker.volume * 100;
@@ -106,22 +112,25 @@ function Volume() {
 		})})
 }
 
-
 function Backlight() {
 	return Widget.Button(
-		{child: Widget.Label({label: "\udb83\udf62"})}
+		{
+		class_name: 'backlight',
+		child: Widget.Label({label: "\udb83\udf62"})}
 	)
 }
-
+	
 function Battery() {
 	return Widget.Button(
-		{child: Widget.Icon({icon: battery.bind('icon_name')})})
+		{class_name:  "battery",
+		 child: Widget.Icon({icon: battery.bind('icon_name')})})
 }
 
 function SystemMenu() {
 	return Widget.Button(
 		{
-		child: Widget.Label({label: "\u23fb"}),
+		class_name: "SystemMenu",
+		child: Widget.Label({class_name: 'sysMenuLabel', label: "\udb80\udf5c"})
 		}
 	)
 }
