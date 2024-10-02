@@ -64,10 +64,6 @@ button {
     border-color: transparent;
 }
 
-.SystemMenu {
-   margin-right: 10px;
-}
-
 .SystemMenu:hover {
    background-color: #275565;
 }
@@ -82,10 +78,6 @@ button {
 
 .bluetooth:hover {
    background-color: #275565;
-}
-
-.volume {
-   margin-left: 20px;
 }
 
 .volume:hover {
@@ -103,12 +95,9 @@ button {
 
 .music_button {
    margin-left: 5px;
-   margin-right: 20px;
+   margin-right: 30px;
 }
 
-.arch_apps {
-   margin-left: 10px;
-}
 
 .arch_apps:hover {
    background-color: #275565;
@@ -119,7 +108,7 @@ button {
 }
 
 .SystemTray {
-  min-width: 30px;
+  min-width: 20px;
   padding-left: 5px;
   padding-right: 5px;
   border-radius: 50px;
@@ -131,4 +120,14 @@ button {
 
 .system_tray_buttons:hover {
  background-color: #275565;
+}
+
+.containers {
+  min-width: 20px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-radius: 50px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  background-color: #224242;
 }

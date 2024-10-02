@@ -6,6 +6,14 @@ const volume = await Service.import('audio')
 const hyprland = await Service.import('hyprland')
 const systemtray = await Service.import('systemtray')
 
+function ContainerBox(widgets, css) {
+	return Widget.Box({
+		class_name: `containers`,
+		children: widgets,
+		css: css
+	})
+}
+
 function Network() {
 	const wifi = Widget.Icon({icon: network.wifi.bind('icon_name')})
 	const wired = Widget.Icon({icon: network.wired.bind('icon_name')})
@@ -13,8 +21,7 @@ function Network() {
 	return Widget.Button ({
 		class_name: 'wifi', 
 		child: Widget.Stack({children: {wifi: wifi, wired: wired}}),
-		onHover: () => console.log(1)}) 
-}
+})}
 
 function Bluetooth() {
 	return Widget.Button({
@@ -127,10 +134,11 @@ function Battery() {
 }
 
 function SystemMenu() {
+	const label = Widget.Label({class_name: 'sysMenuLabel', label: "\udb80\udf5c"})
 	return Widget.Button(
 		{
 		class_name: "SystemMenu",
-		child: Widget.Label({class_name: 'sysMenuLabel', label: "\udb80\udf5c"})
+		child: label,
 		}
 	)
 }
@@ -150,12 +158,13 @@ function Right() {
 	 	hpack: "end",
 		spacing:8,
 		children: [
-			Volume(),
-			Backlight(),
-			Battery(),
-			Bluetooth(),
-			Network(),
-			SystemMenu()
+			ContainerBox([Volume(),
+				      Backlight(),
+				      Battery(),
+				      Bluetooth(),
+				      Network()],
+				      'margin-left:30px'),
+			ContainerBox([SystemMenu()], 'margin-right: 10px;' )
 		]
 	})
 }
@@ -178,8 +187,7 @@ function Left() {
 		class_name: 'left',
 		spacing: 8,
 		children: [
-			Arch(),
-			User(),
+			ContainerBox([Arch(), User()], 'margin-left: 10px'),
 			Workspaces(),
 			SystemTray()
 		]
