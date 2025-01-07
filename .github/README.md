@@ -1,3 +1,6 @@
+# NOTE NOTE NOTE
+- This project/dotfiles is discontinued due to personal reason lol :)
+  
 # Efficacy
 Archlinux Dotfiles of mine using Hyprland...
 
